@@ -1,12 +1,13 @@
 const { registerKeyPressListener } = require('./keyListenerUtil');
 const { makeTab } = require('./tab');
+const { game } = require('./constants.json');
 
 /**
  * Constants;
  */
-const width = 30,
-    height = 15,
-    playerSpread = 2,
+const width = game.width,
+    height = game.height,
+    playerSpread = game.playerSideSize,
     // in ms. 33 = ~30 refresh per second (fps)
     REFRESH_RATE = 33;
 

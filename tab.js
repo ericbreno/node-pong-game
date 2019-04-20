@@ -1,13 +1,14 @@
+const { tab } = require('./constants.json');
 const { makeBall } = require('./ball');
 
 /**
  * Constants
  */
-const defaultTabChar = ' ',
-    p1char = ')',
-    p2char = '(',
-    p1charCollision = '❚',
-    p2charCollision = '❚';
+const defaultCharTab = tab.defaultCharTab,
+    player1Char = tab.player1Char,
+    player2Char = tab.player2Char,
+    player1CharCollision = tab.player1CharCollision,
+    player2CharCollision = tab.player2CharCollision;
 
 /**
  * Utility
@@ -20,7 +21,7 @@ const print = c => {
     linesToBack = c.split('\n').length - 1;
 };
 
-const spawnList = size => size && [defaultTabChar].concat(spawnList(size - 1)) || [];
+const spawnList = size => size && [defaultCharTab].concat(spawnList(size - 1)) || [];
 
 /**
  * Tab constructor
@@ -72,22 +73,22 @@ const makeTab = (_xTab, _yTab, _playerSideSize) => {
         },
         plotItens(clear = false) {
             const [realBallx, realBally, ballChar] = ballInstance.calculateBallFor();
-            tabMatrix[realBallx][realBally] = clear ? defaultTabChar : ballChar;
+            tabMatrix[realBallx][realBally] = clear ? defaultCharTab : ballChar;
 
             for (let i = 0; i <= playerSideSize; i++) {
-                tabMatrix[p1x - i][0] = clear ? defaultTabChar : p1char;
-                tabMatrix[p2x - i][xTab - 1] = clear ? defaultTabChar : p2char;
+                tabMatrix[p1x - i][0] = clear ? defaultCharTab : player1Char;
+                tabMatrix[p2x - i][xTab - 1] = clear ? defaultCharTab : player2Char;
             }
             for (let i = 1; i <= playerSideSize; i++) {
-                tabMatrix[p1x + i][0] = clear ? defaultTabChar : p1char;
-                tabMatrix[p2x + i][xTab - 1] = clear ? defaultTabChar : p2char;
+                tabMatrix[p1x + i][0] = clear ? defaultCharTab : player1Char;
+                tabMatrix[p2x + i][xTab - 1] = clear ? defaultCharTab : player2Char;
             }
 
             if (ballInstance.hitP1()) {
-                tabMatrix[realBallx][0] = clear ? defaultTabChar : p1charCollision;
+                tabMatrix[realBallx][0] = clear ? defaultCharTab : player1CharCollision;
             }
             if (ballInstance.hitP2()) {
-                tabMatrix[realBallx][xTab - 1] = clear ? defaultTabChar : p2charCollision;
+                tabMatrix[realBallx][xTab - 1] = clear ? defaultCharTab : player2CharCollision;
             }
         },
         clearItens() {

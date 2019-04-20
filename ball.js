@@ -1,5 +1,6 @@
-const chs = ['▖', '▗', '▝', '▘', '-'];
-const [dl, dr, ur, ul, center] = chs;
+const { ball } = require('./constants.json');
+const [dl, dr, ur, ul, center] =
+    [ball.downLeft, ball.downRight, ball.upRight, ball.upLeft, ball.center];
 
 const makeBall = (_xTab, _yTab, _playerSideSize) => {
     const xTab = _xTab;

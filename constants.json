@@ -1,0 +1,21 @@
+{
+    "tab": {
+        "defaultCharTab": " ",
+        "player1Char": ")",
+        "player2Char": "(",
+        "player1CharCollision": "❚",
+        "player2CharCollision": "❚"
+    },
+    "ball": {
+        "downLeft": "▖",
+        "downRight": "▗",
+        "upLeft": "▘",
+        "upRight": "▝",
+        "center": "-"
+    },
+    "game": {
+        "width": 30,
+        "height": 15,
+        "playerSideSize": 2
+    }
+}
