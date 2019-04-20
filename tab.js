@@ -55,7 +55,7 @@ const makeTab = (_xTab, _yTab, _playerSideSize) => {
         },
         printTab() {
             cls();
-            const scoreStr = `${score1} x ${score2}`;
+            const scoreStr = `SCORE: ${score1} x ${score2}`;
             const tabStr = tabMatrix.map(line => ` ${line.join('')} `).join('\n');
 
             print(`\n${scoreStr}\n\n${tabStr}`);
