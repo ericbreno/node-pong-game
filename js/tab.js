@@ -1,4 +1,4 @@
-const { tab } = require('./constants.json');
+const { tab } = require('../constants.json');
 const { makeBall } = require('./ball');
 
 /**
@@ -72,7 +72,7 @@ const makeTab = (_xTab, _yTab, _playerSideSize) => {
             this.plotItens();
         },
         plotItens(clear = false) {
-            const [realBallx, realBally, ballChar] = ballInstance.calculateBallFor();
+            const [realBallx, realBally, ballChar] = ballInstance.calculateRealCoordinates();
             tabMatrix[realBallx][realBally] = clear ? defaultCharTab : ballChar;
 
             for (let i = 0; i <= playerSideSize; i++) {
