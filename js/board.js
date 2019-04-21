@@ -30,7 +30,7 @@ const spawnList = size => size && [defaultCharTab].concat(spawnList(size - 1)) |
  * @param {Number} _yTab Number of rows
  * @param {Number} _playerSideSize Tiles for each side of player center
  */
-const makeTab = (_xTab, _yTab, _playerSideSize) => {
+const makeBoard = (_xTab, _yTab, _playerSideSize) => {
     const xTab = _xTab;
     const yTab = _yTab;
     const playerSideSize = _playerSideSize;
@@ -62,7 +62,7 @@ const makeTab = (_xTab, _yTab, _playerSideSize) => {
          * Builds the data to be printed on terminal (score and table), and prints it.
          */
         printTab() {
-            const scoreStr = `SCORE: ${score1} x ${score2}`;
+            const scoreStr = `  >> SCORE: ${score1} x ${score2} <<  `;
             const tabStr = tabMatrix.map(line => ` ${line.join('')} `).join('\n');
 
             print(`\n${scoreStr}\n\n${tabStr}`);
@@ -137,5 +137,5 @@ const makeTab = (_xTab, _yTab, _playerSideSize) => {
 };
 
 module.exports = {
-    makeTab
+    makeBoard
 };

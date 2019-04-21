@@ -1,5 +1,5 @@
 const { registerKeyPressListener } = require('./keyListenerUtil');
-const { makeTab } = require('./tab');
+const { makeBoard } = require('./board');
 const { game } = require('../constants.json');
 
 /**
@@ -19,7 +19,7 @@ const wait = time => new Promise((res) => setTimeout(res, time));
 /**
  * Tab
  */
-const tabInstance = makeTab(width, height, playerSpread);
+const tabInstance = makeBoard(width, height, playerSpread);
 tabInstance.plotItens();
 
 /**
